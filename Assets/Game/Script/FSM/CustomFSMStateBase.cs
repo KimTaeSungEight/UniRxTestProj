@@ -8,10 +8,10 @@ namespace FSM
 {
     public abstract class CustomFSMStateBase : MonoBehaviour, IFSMStateBase
     {
-        private FSMSystem<System.Enum, IFSMStateBase> _fsmSystem = null;
-        public FSMSystem<System.Enum, IFSMStateBase> FSMSystem => _fsmSystem;
+        private FSMSystem<TransitionCondition, IFSMStateBase> _fsmSystem = null;
+        public FSMSystem<TransitionCondition, IFSMStateBase> FSMSystem => _fsmSystem;
         
-        public virtual void InitState(FSMSystem<System.Enum, IFSMStateBase> fsmSystem)
+        public virtual void InitState(FSMSystem<TransitionCondition, IFSMStateBase> fsmSystem)
         {
             this._fsmSystem = fsmSystem;
         }

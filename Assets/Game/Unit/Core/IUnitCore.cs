@@ -9,5 +9,7 @@ namespace Unit.Core
     public interface IUnitCore : IUnitMovement, Stat.IStatCtrl, Ani.IAnimationCtrl
     {
         ISubject<UniRx.Unit> UnitDeadSubject { get; }   
+
+        IReadOnlyReactiveProperty<bool> IsMoveAble { get; }
     }
 }

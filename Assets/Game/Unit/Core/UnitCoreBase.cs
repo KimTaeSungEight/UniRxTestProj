@@ -13,15 +13,23 @@ namespace Unit.Core
         private AnimationCtrl _animationCtrl;
         [SerializeField]
         private UnitMovement _movement;
-        private StatCtrl statCtrl = new StatCtrl();
+        private StatCtrl _statCtrl = new StatCtrl();
 
-        private Subject<UniRx.Unit> UnitDeadAsync;
+        protected Subject<UniRx.Unit> UnitDeadAsync;
+        protected ReactiveProperty<bool> _isMoveAble;
 
         public ISubject<UniRx.Unit> UnitDeadSubject => UnitDeadAsync;
 
-        public IReadOnlyReactiveProperty<float> Hp => statCtrl.HpProperty;
+        public IReadOnlyReactiveProperty<float> Hp => _statCtrl.HpProperty;
 
-        public UnitStat UnitStat => statCtrl.UnitStat;
+        public UnitStat UnitStat => _statCtrl.UnitStat;
+
+        public IReadOnlyReactiveProperty<bool> IsMoveAble => _isMoveAble;
+
+        private void Awake()
+        {
+            _statCtrl.Init(new UnitStat());   
+        }
 
         public int GetCurAni()
         {
@@ -45,7 +53,7 @@ namespace Unit.Core
 
         public void HandleHp(float changeHp)
         {
-            statCtrl.HandleHp(changeHp);
+            _statCtrl.HandleHp(changeHp);
         }
 
         public void Move()

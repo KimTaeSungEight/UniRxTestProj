@@ -8,6 +8,8 @@ namespace FSM
 {
     public abstract class FSMSystem<EnumType, State> : MonoBehaviour where EnumType : System.Enum where State : FSM.IFSMStateBase
     {
+        [SerializeField] protected Unit.Core.UnitCoreBase unitCoreBase;
+
         [SerializeField] private EnumType _currState;
         public EnumType CurrState => _currState;
 
