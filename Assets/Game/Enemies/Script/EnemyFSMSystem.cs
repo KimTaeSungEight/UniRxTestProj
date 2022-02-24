@@ -14,6 +14,12 @@ namespace FSM.Enemies
         {
             for (int i = 0; i < states.Count; i++)
             {
+                if (states[i].Condition == TransitionCondition.None)
+                {
+                    Debug.LogError("TransitionCondition is None");
+                    return;
+                }
+
                 AddState(states[i].Condition, states[i]);
             }
         }

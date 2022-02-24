@@ -6,6 +6,7 @@ namespace FSM
 {
     public enum TransitionCondition
     {
+        None,
         Idle,
         Move,
         Attack,

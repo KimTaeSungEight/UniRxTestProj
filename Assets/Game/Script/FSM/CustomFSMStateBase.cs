@@ -23,7 +23,7 @@ namespace FSM
         public abstract bool Transition(TransitionCondition condition);
 
         [SerializeField]
-        private TransitionCondition condition;
+        private TransitionCondition condition = TransitionCondition.None;
 
         public TransitionCondition Condition => condition;
     }
