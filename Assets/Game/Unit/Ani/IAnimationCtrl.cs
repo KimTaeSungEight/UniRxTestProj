@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unit.Ani
+namespace KimbaUnit.Ani
 {
     public interface IAnimationCtrl
     {
-        void PlayAni(AnimationEnum animationEnum);
+        void SetAniState(AnimationEnum animationEnum);
+        void SetAniFrontOrBack(bool isfrontOrBack);
 
         float GetCurAniTime();
 

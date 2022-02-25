@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-namespace Unit.Stat
+namespace KimbaUnit.Stat
 {
     public struct UnitStat
     {

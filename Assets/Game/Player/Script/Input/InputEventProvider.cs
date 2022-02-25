@@ -32,11 +32,10 @@ namespace KimbaInput
         {
             while (!ct.IsCancellationRequested)
             {
-                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
                 {
                     _moveDirection.SetValueAndForceNotify(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
                     _inputEvent.Value = FSM.TransitionCondition.Move;
-                    Debug.Log("MoveKeyDown");
                 }
 
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -48,10 +47,7 @@ namespace KimbaInput
                 if (Input.anyKey == false)
                 {
                     _inputEvent.Value = FSM.TransitionCondition.None;
-                    Debug.Log("AniKeyDown Is False");
                 }
-
-                Debug.Log(_inputEvent.Value.ToString());
 
                 await UniTask.Yield();
 

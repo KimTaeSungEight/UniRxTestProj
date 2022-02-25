@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-namespace Unit.Stat
+namespace KimbaUnit.Stat
 {
-    public class StatCtrl
+    public class StatCtrl : MonoBehaviour, IStatCtrl
     {
         private UnitStat _unitStat;
         public UnitStat UnitStat => _unitStat;
 
-        private FloatReactiveProperty _hpProperty;
-        public FloatReactiveProperty HpProperty => _hpProperty;
+        private FloatReactiveProperty _hpProperty = new FloatReactiveProperty();
+
+        public IReadOnlyReactiveProperty<float> Hp => _hpProperty;
 
         public void Init(UnitStat unitStat)
         {

@@ -1,4 +1,4 @@
-namespace Unit.Ani
+namespace KimbaUnit.Ani
 {
     public enum AnimationEnum
     {

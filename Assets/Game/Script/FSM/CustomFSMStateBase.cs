@@ -14,6 +14,7 @@ namespace FSM
         public virtual void InitState(FSMSystem<TransitionCondition, IFSMStateBase> fsmSystem)
         {
             this._fsmSystem = fsmSystem;
+            _unitProvider = GetComponentInParent<KimbaUnit.Moderator.IUnitModerator>();
         }
 
         public abstract void StartState();
@@ -26,5 +27,7 @@ namespace FSM
         private TransitionCondition condition = TransitionCondition.None;
 
         public TransitionCondition Condition => condition;
+
+        protected KimbaUnit.Moderator.IUnitModerator _unitProvider;
     }
 }

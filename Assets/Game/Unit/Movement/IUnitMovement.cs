@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unit
+namespace KimbaUnit.Movement
 {
     public interface IUnitMovement
     {
-        void Move();
+        void Move(Vector2 dir);
+
+        void Stop();
     }
 }

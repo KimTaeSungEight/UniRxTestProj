@@ -4,12 +4,11 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 
-namespace Unit.Core
+namespace KimbaUnit.Core
 {
-    public interface IUnitCore : IUnitMovement, Stat.IStatCtrl, Ani.IAnimationCtrl
+    public interface IUnitCore
     {
         ISubject<UniRx.Unit> UnitDeadSubject { get; }   
-
-        IReadOnlyReactiveProperty<bool> IsMoveAble { get; }
+        Moderator.IUnitModerator UnitProvider { get; }
     }
 }
